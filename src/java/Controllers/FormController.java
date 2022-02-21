@@ -35,20 +35,16 @@ public class FormController {
     }
     
     
-    @RequestMapping(value = "jstlform_user.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "form_user.htm", method = RequestMethod.GET)
     public ModelAndView getUserForm(){
         return new ModelAndView("Views/jstlform_user", "user", new UserBean());
     }
     
-    @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "form_pet.htm", method = RequestMethod.GET)
     public ModelAndView getPetForm(){
         return new ModelAndView("Views/jstlform_pet", "pet", new PetBean());
     }
     
-    @RequestMapping(value = "jstlform_adoptpet.htm", method = RequestMethod.GET)
-    public ModelAndView getAdoptForm(){
-        return new ModelAndView("Views/jstlform_adoptpet", "adoptpet", new AdoptBean());
-    }
     
     /***
       Form Validation
@@ -57,7 +53,7 @@ public class FormController {
      * @param status
       @return ModelAndView
     ***/
-    @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "form_pet.htm", method = RequestMethod.POST)
     public ModelAndView valpostPetForm(
             @ModelAttribute("pet") PetBean pb, 
             BindingResult result,
@@ -75,7 +71,7 @@ public class FormController {
         return mav;
     }
     
-    @RequestMapping(value = "jstlform_user.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "form_user.htm", method = RequestMethod.POST)
     public ModelAndView valpostUserForm(
             @ModelAttribute("user") UserBean ub, 
             BindingResult result,
@@ -91,12 +87,6 @@ public class FormController {
             mav.setViewName("Views/jstlview_user");
         }
         return mav;
-    }
-    
-    @RequestMapping(value = "jstlform_adoptpet.htm", method = RequestMethod.POST)
-    public String postAdoptForm(AdoptBean ab, ModelMap map){
-        map.addAttribute("adopt", ab);
-        return "Views/jstlview_adoptpet";
     }
     
     

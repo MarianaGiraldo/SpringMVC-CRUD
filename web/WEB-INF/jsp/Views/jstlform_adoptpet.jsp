@@ -11,7 +11,7 @@
     <div class="wrap-contact100 m-t-80">
         <form:form commandName="adoptpet" cssClass="contact100-form validate-form" method="POST">
             <span class="contact100-form-title m-b-0">
-                Welcome!
+                Adopt a pet...
             </span>
             <div class="text-muted">
                 <c:catch var="errorDB">
@@ -37,11 +37,6 @@
             <div class="wrap-input100 input100-select">
                 <form:label path="pet_id" cssClass="label-input100">Is adopted?</form:label>
                     <div>
-                    <form:select path="pet_id" cssClass="selection-2-isadopted form-select fs-18">
-                        <option selected disabled>Select if is adopted</option>
-                        <option value="true">Yes</option>
-                        <option value="false">No</option>
-                    </form:select>
                 </div>
                 <span class="focus-input100"></span>
             </div>

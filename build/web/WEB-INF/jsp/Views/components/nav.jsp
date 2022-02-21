@@ -92,13 +92,13 @@
                         <a class="nav-link active" aria-current="page" href="index.htm">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="jstlform_user.htm">User</a>
+                        <a class="nav-link" href="form_user.htm">User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="jstlform_pet.htm">Pet</a>
+                        <a class="nav-link" href="form_pet.htm">Pet</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adopt_form.htm">Adopt Pet</a>
+                        <a class="nav-link" href="form_adoptpet.htm">Adopt Pet</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.jsp">Login</a>
