@@ -4,8 +4,6 @@
     Author     : Mariana
 --%>
 
-<%@page import="java.sql.Connection"%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="components/nav.jsp" %>
 

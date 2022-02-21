@@ -26,6 +26,7 @@
                 <prop key="view_pet.htm">homeController</prop>
                 <prop key="jstlform_user.htm">FormController</prop>
                 <prop key="jstlform_pet.htm">FormController</prop>
+                <prop key="jstlform_adoptpet.htm">FormController</prop>
             </props>
         </property>
     </bean>

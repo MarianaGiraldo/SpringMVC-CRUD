@@ -6,11 +6,13 @@
 
 package Controllers;
 
+import Models.AdoptBean;
 import Models.PetBean;
 import Models.PetBeanValidation;
 import Models.UserBean;
 import Models.UserBeanValidation;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,27 +40,23 @@ public class FormController {
         return new ModelAndView("Views/jstlform_user", "user", new UserBean());
     }
     
-//    @RequestMapping(value = "jstlform_user.htm", method = RequestMethod.POST)
-//    public String postUserForm(UserBean ub, ModelMap map){
-//        map.addAttribute("ub", ub);
-//        return "Views/jstlview_user";
-//    }
-    
     @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.GET)
     public ModelAndView getPetForm(){
         return new ModelAndView("Views/jstlform_pet", "pet", new PetBean());
     }
     
-//    @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.POST)
-//    public String postPetForm(PetBean pb, ModelMap map){
-//        map.addAttribute("pet", pb);
-//        return "Views/jstlview_pet";
-//    }
+    @RequestMapping(value = "jstlform_adoptpet.htm", method = RequestMethod.GET)
+    public ModelAndView getAdoptForm(){
+        return new ModelAndView("Views/jstlform_adoptpet", "adoptpet", new AdoptBean());
+    }
     
-    
-    /*
-        Form Validation
-    */
+    /***
+      Form Validation
+     * @param pb
+     * @param result
+     * @param status
+      @return ModelAndView
+    ***/
     @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.POST)
     public ModelAndView valpostPetForm(
             @ModelAttribute("pet") PetBean pb, 
@@ -94,5 +92,12 @@ public class FormController {
         }
         return mav;
     }
+    
+    @RequestMapping(value = "jstlform_adoptpet.htm", method = RequestMethod.POST)
+    public String postAdoptForm(AdoptBean ab, ModelMap map){
+        map.addAttribute("adopt", ab);
+        return "Views/jstlview_adoptpet";
+    }
+    
     
 }
