@@ -22,7 +22,7 @@
                     <c:param name="error" value="Born year is required" />
                 </c:redirect>
             </c:if>
-            
+
             <b>Name: </b>${pet.getName()}<br/>
             <b>Pet type: </b> <jsp:getProperty name="pet" property="pet_type" /><br/>
             <b>Born Year: </b> <jsp:getProperty name="pet" property="born_year" /><br/>

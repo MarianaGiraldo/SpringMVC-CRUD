@@ -3,7 +3,6 @@
     Created on : 17/02/2022, 08:13:13 AM
     Author     : Mariana
 --%>
-<%@page import="Models.Dao"%>
 <%@page import="java.sql.Connection"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,16 +10,17 @@
 
 <div class="container-contact100">
             <div class="wrap-contact100 m-t-80">
-                <form:form cssClass="contact100-form validate-form" method="POST">
+                <form:form commandName="pet" cssClass="contact100-form validate-form" method="POST">
                     <span class="contact100-form-title m-b-0">
                         Pet
                     </span>
                     <c:if test="${not empty param.error}">
-                        <div class="alert alert-danger mb-2">
+                        <%--<div class="alert alert-danger mb-2">
                             <b>Error! </b>${param.error} <br/>
-                        </div>
+                        </div> --%>
                     </c:if>
                     <br/>
+                    <form:errors path="*" element="div" cssClass="alert alert-danger" />
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
                         <form:label path="name" cssClass="label-input100">Name</form:label>
                         <form:input path="name" cssClass="input100" type="text" placeholder="Enter the pet's name" />
@@ -29,7 +29,7 @@
 
                     <div class="wrap-input100 validate-input" data-validate = "Born year is required: ex@abc.xyz">
                         <form:label path="born_year" cssClass="label-input100">Born year</form:label>
-                        <form:input path="born_year" cssClass="input100" type="text" placeholder="Enter the pet's born year" />
+                        <form:input path="born_year" cssClass="input100" type="number" placeholder="Enter the pet's born year" />
                         <span class="focus-input100"></span>
                     </div>
                     

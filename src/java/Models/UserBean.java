@@ -17,12 +17,12 @@ public class UserBean {
     private String name;
     private String phoneNumber;
     private String email;
-    private int id;
+    private String id;
 
     public UserBean() {
     }
 
-    public UserBean(String name, String phoneNumber, String email, int id) {
+    public UserBean(String name, String phoneNumber, String email, String id) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -75,14 +75,14 @@ public class UserBean {
     /**
      * @return the id
      */
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     

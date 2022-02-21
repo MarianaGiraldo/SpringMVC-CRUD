@@ -7,11 +7,16 @@
 package Controllers;
 
 import Models.PetBean;
+import Models.PetBeanValidation;
 import Models.UserBean;
+import Models.UserBeanValidation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -20,27 +25,74 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class FormController {
+    private final PetBeanValidation validate_pet;
+    private final UserBeanValidation validate_user;
+
+    public FormController() {
+        this.validate_pet = new PetBeanValidation();
+        this.validate_user = new UserBeanValidation();
+    }
+    
     
     @RequestMapping(value = "jstlform_user.htm", method = RequestMethod.GET)
     public ModelAndView getUserForm(){
-        return new ModelAndView("Views/jstlform_user", "command", new UserBean());
+        return new ModelAndView("Views/jstlform_user", "user", new UserBean());
     }
     
-    @RequestMapping(value = "jstlform_user.htm", method = RequestMethod.POST)
-    public String postUserForm(UserBean ub, ModelMap map){
-        map.addAttribute("ub", ub);
-        return "Views/jstlview_user";
-    }
+//    @RequestMapping(value = "jstlform_user.htm", method = RequestMethod.POST)
+//    public String postUserForm(UserBean ub, ModelMap map){
+//        map.addAttribute("ub", ub);
+//        return "Views/jstlview_user";
+//    }
     
     @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.GET)
     public ModelAndView getPetForm(){
-        return new ModelAndView("Views/jstlform_pet", "command", new PetBean());
+        return new ModelAndView("Views/jstlform_pet", "pet", new PetBean());
     }
     
+//    @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.POST)
+//    public String postPetForm(PetBean pb, ModelMap map){
+//        map.addAttribute("pet", pb);
+//        return "Views/jstlview_pet";
+//    }
+    
+    /*
+        Form Validation
+    */
     @RequestMapping(value = "jstlform_pet.htm", method = RequestMethod.POST)
-    public String postPetForm(PetBean pb, ModelMap map){
-        map.addAttribute("pet", pb);
-        return "Views/jstlview_pet";
+    public ModelAndView valpostPetForm(
+            @ModelAttribute("pet") PetBean pb, 
+            BindingResult result,
+            SessionStatus status
+            ){
+        ModelAndView mav = new ModelAndView();
+        this.validate_pet.validate(pb, result);
+        if(result.hasErrors()){
+            mav.addObject("pet", new PetBean());
+            mav.setViewName("Views/jstlform_pet");
+        }else{
+            mav.addObject("pet", pb);
+            mav.setViewName("Views/jstlview_pet");
+        }
+        return mav;
+    }
+    
+    @RequestMapping(value = "jstlform_user.htm", method = RequestMethod.POST)
+    public ModelAndView valpostUserForm(
+            @ModelAttribute("user") UserBean ub, 
+            BindingResult result,
+            SessionStatus status
+            ){
+        ModelAndView mav = new ModelAndView();
+        this.validate_user.validate(ub, result);
+        if(result.hasErrors()){
+            mav.addObject("ub", new UserBean());
+            mav.setViewName("Views/jstlform_user");
+        }else{
+            mav.addObject("ub", ub);
+            mav.setViewName("Views/jstlview_user");
+        }
+        return mav;
     }
     
 }

@@ -4,7 +4,6 @@
     Author     : Mariana
 --%>
 
-<%@page import="Models.Dao"%>
 <%@page import="java.sql.Connection"%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,7 +11,7 @@
 
 <div class="container-contact100">
     <div class="wrap-contact100 m-t-80">
-        <form:form cssClass="contact100-form validate-form" method="POST">
+        <form:form commandName="user" cssClass="contact100-form validate-form" method="POST">
             <span class="contact100-form-title m-b-0">
                 Welcome!
             </span>
@@ -31,6 +30,7 @@
                     }
                 %>
             </p>
+            <form:errors path="*" element="div" cssClass="alert alert-danger mt-0" />
             <br/>
             <div class="wrap-input100 validate-input" data-validate="Name is required">
                 <form:label path="name" cssClass="label-input100">Your Name</form:label>
@@ -46,12 +46,12 @@
 
             <div class="wrap-input100 validate-input" data-validate = "Phone number is required">
                 <form:label path="phoneNumber" cssClass="label-input100">Phone Number</form:label>
-                <form:input path="phoneNumber" cssClass="input100" type="text" placeholder="Enter your phone number" />
+                <form:input path="phoneNumber" cssClass="input100" type="tel" placeholder="Enter your phone number" value="" pattern="[0-9]{10}" title="Phone Number invalid: Only numbers allowed"/>
                 <span class="focus-input100"></span>
             </div>
             <div class="wrap-input100 validate-input" data-validate = "Phone number is required">
                 <form:label path="id" cssClass="label-input100">Identification Number</form:label>
-                <form:input path="id" cssClass="input100" type="text" placeholder="Enter your ID" />
+                <form:input path="id" cssClass="input100" type="text" placeholder="Enter your ID"  value="" pattern="[0-9]{10}" />
                 <span class="focus-input100"></span>
             </div>
 
