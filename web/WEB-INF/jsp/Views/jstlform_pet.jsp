@@ -14,12 +14,6 @@
                     <span class="contact100-form-title m-b-0">
                         Pet
                     </span>
-                    <c:if test="${not empty param.error}">
-                        <%--<div class="alert alert-danger mb-2">
-                            <b>Error! </b>${param.error} <br/>
-                        </div> --%>
-                    </c:if>
-                    <br/>
                     <form:errors path="*" element="div" cssClass="alert alert-danger" />
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
                         <form:label path="name" cssClass="label-input100">Name</form:label>
@@ -29,7 +23,7 @@
 
                     <div class="wrap-input100 validate-input" data-validate = "Born year is required: ex@abc.xyz">
                         <form:label path="born_year" cssClass="label-input100">Born year</form:label>
-                        <form:input path="born_year" cssClass="input100" type="number" placeholder="Enter the pet's born year" />
+                        <form:input path="born_year" cssClass="input100" type="number" placeholder="Enter the pet's born year" value="" min="1960" max="2022"/>
                         <span class="focus-input100"></span>
                     </div>
                     

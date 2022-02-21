@@ -44,7 +44,7 @@ public class homeController {
         String name = request.getParameter("txtName");
         String email = request.getParameter("txtEmail");
         String phoneNumber = request.getParameter("txtPhone");
-        int id = Integer.parseInt(request.getParameter("txtId"));
+        String id = request.getParameter("txtId");
         
         UserBean ub = new UserBean(name, phoneNumber, email, id);
         
