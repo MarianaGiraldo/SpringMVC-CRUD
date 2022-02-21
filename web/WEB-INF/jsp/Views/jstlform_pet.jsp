@@ -15,20 +15,11 @@
                     <span class="contact100-form-title m-b-0">
                         Pet
                     </span>
-                    <p class="text-muted mt-0">
-                        <%
-                            try {
-                                if (Dao.conecta() != null) {
-                                    Connection con = Dao.conecta();
-                                    out.print("Conexion a Base de datos exitosa.");
-                                }else{
-                                    out.print("Conexion a Base de datos nula.");
-                                }
-                            } catch (Exception ex) {
-                                out.print("Conexion a Base de datos fallida: " + ex.getMessage());
-                            }
-                        %>
-                    </p>
+                    <c:if test="${not empty param.error}">
+                        <div class="alert alert-danger mb-2">
+                            <b>Error! </b>${param.error} <br/>
+                        </div>
+                    </c:if>
                     <br/>
                     <div class="wrap-input100 validate-input" data-validate="Name is required">
                         <form:label path="name" cssClass="label-input100">Name</form:label>
@@ -56,7 +47,7 @@
                     <div class="wrap-input100 input100-select">
                         <form:label path="pet_type" cssClass="label-input100">Pet type</form:label>
                         <div class="select2">
-                            <form:select path="pet_type" cssClass="form-select selection-2-pettype">
+                            <form:select path="pet_type" cssClass="form-select selection-2-pettype fs-18">
                                 <option selected disabled>Select a type of pet</option>
                                 <option value="Cat">Cat</option>
                                 <option value="Dog">Dog</option>
@@ -72,7 +63,7 @@
                     <div class="wrap-input100 input100-select">
                         <form:label path="is_adopted" cssClass="label-input100">Is adopted?</form:label>
                         <div>
-                            <form:select path="is_adopted" cssClass="selection-2-isadopted form-select">
+                            <form:select path="is_adopted" cssClass="selection-2-isadopted form-select fs-18">
                                 <option selected disabled>Select if is adopted</option>
                                 <option value="true">Yes</option>
                                 <option value="false">No</option>
@@ -81,14 +72,6 @@
                         <span class="focus-input100"></span>
                     </div>
                     
-                    <script>
-                        $(document).ready(function() {
-                            $('.selection-2-pettype').select2();
-                        });
-                        $(document).ready(function() {
-                            $('.selection-2-isadopted').select2();
-                        });
-                    </script>
                     
                     <div class="container-contact100-form-btn">
                         <div class="wrap-contact100-form-btn">
@@ -102,6 +85,7 @@
                         </div>
                     </div>
                 </form:form>
+                    
             </div>
         </div>
         <div id="dropDownSelect1"></div>
