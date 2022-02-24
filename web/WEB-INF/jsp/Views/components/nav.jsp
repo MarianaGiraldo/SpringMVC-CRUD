@@ -19,41 +19,24 @@
         <link rel="stylesheet" href='<c:url value="public/css/nav.css" />' >
         <link rel="stylesheet" href='<c:url value="public/css/util.css" />' >
 
-        <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+        <link rel="icon" type="image/png" href="public/images/icons/favicon.ico"/>
         <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href='<c:url value="vendor/bootstrap/css/bootstrap.min.css" />'>
+        <link rel="stylesheet" type="text/css" href='<c:url value="public/vendor/bootstrap/css/bootstrap.min.css" />'>
         <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href='<c:url value="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />'>
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href='<c:url value="vendor/animate/animate.css" />'>
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href='<c:url value="vendor/css-hamburgers/hamburgers.min.css" />'>
-        <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href='<c:url value="vendor/animsition/css/animsition.min.css" />'>
+        <link rel="stylesheet" type="text/css" href='<c:url value="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />'>
         <!--===============================================================================================-->
 
         <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href='<c:url value="vendor/daterangepicker/daterangepicker.css"/>'>
-
-
-
-
-        <!--===============================================================================================-->
-        <script src='<c:url value="vendor/daterangepicker/moment.min.js"/>'></script>
-        <script src='<c:url value="vendor/daterangepicker/daterangepicker.js"/>'></script>
-        <!--===============================================================================================-->
-        <script src='<c:url value="vendor/countdowntime/countdowntime.js"/>'></script>
-        <!--===============================================================================================-->
-        <script src='<c:url value="js/main.js"/>'></script>
-
+        <script src='<c:url value="public/js/main.js"/>'></script>
+        <script src='<c:url value="public/js/nav.js"/>'></script>   
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Adopt Pets</title>
     </head>
     <body class="bg-primary bg-opacity-10">
 
-    <nav class="navbar navbar-expand-lg nav bg-dark">
-        <script src='<c:url value="Views/js/nav.js"/>'></script>   
+    <nav class="navbar navbar-expand-lg nav">
+
         <div class="container-fluid container">
             <div class="logo">
                 <a class="navbar-brand" href="index.htm">Your Logo</a>
@@ -73,7 +56,7 @@
                         <a class="nav-link" href="form_pet.htm">Pet</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="form_adoptpet.htm">Adopt Pet</a>
+                        <a class="nav-link" href="listpets.htm">Adopt Pet</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.jsp">Login</a>
@@ -89,8 +72,7 @@
     </nav>
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
-
+    
     <!-- Function used to shrink nav bar removing paddings and adding black background -->
     <script>
         $(window).scroll(function() {
@@ -102,6 +84,5 @@
                 $('.nav').removeClass('bg-dark');
                 $('.nav').removeClass('p-0');
             }
-            s
         });
     </script>
