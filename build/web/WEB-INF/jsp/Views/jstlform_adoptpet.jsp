@@ -9,24 +9,10 @@
 
 <div class="container-contact100">
     <div class="wrap-contact100 m-t-80">
-        <form:form commandName="adoptpet" cssClass="contact100-form validate-form" method="POST">
+        <form:form commandName="adopt" cssClass="contact100-form validate-form" method="POST">
             <span class="contact100-form-title m-b-0">
-                Adopt a pet...
+                Adopt pet ${pet_id}
             </span>
-            <div class="text-muted">
-                <c:catch var="errorDB">
-                    <sql:setDataSource driver="com.mysql.jdbc.Driver"
-                                       url="jdbc:mysql://localhost:3306/adopt_pets_db"
-                                       user="root"
-                                       password=""/>
-                    <sql:query var="pets" sql="SELECT id FROM pets"/>
-                </c:catch>
-                <c:if test="${not empty errorDB}">
-                    <div class="alert alert-danger">
-                        <strong>Se produjo un error:</strong> ${errorDB} <br>
-                    </div>
-                </c:if>
-            </div>
             <form:errors path="*" element="div" cssClass="alert alert-danger mt-0" />
             <br/>
             <div class="wrap-input100 validate-input" data-validate = "Phone number is required">
@@ -35,7 +21,8 @@
                 <span class="focus-input100"></span>
             </div>
             <div class="wrap-input100 input100-select">
-                <form:label path="pet_id" cssClass="label-input100">Is adopted?</form:label>
+                <form:label path="pet_id" cssClass="label-input100">Pet id</form:label>
+                <form:input path="user_id" cssClass="input100 " type="text" value="${pet_id}" disabled="true"/>
                     <div>
                 </div>
                 <span class="focus-input100"></span>

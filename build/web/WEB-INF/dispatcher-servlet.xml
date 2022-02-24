@@ -23,7 +23,8 @@
                 <prop key="form_user.htm">FormController</prop>
                 <prop key="form_pet.htm">FormController</prop>
                 <prop key="form_adoptpet.htm">AdoptController</prop>
-                <prop key="listpets.htm">AdoptController</prop>
+                <prop key="listpets.htm">PetController</prop>
+                <prop key="listusers.htm">UserController</prop>
             </props>
         </property>
     </bean>
@@ -51,6 +52,18 @@
     -->
     <bean name="AdoptController"
           class="Controllers.AdoptController" />
+    
+    <!--
+    User controller.
+    -->
+    <bean name="UserController"
+          class="Controllers.UserController" />
+    
+    <!--
+    Pet controller.
+    -->
+    <bean name="PetController"
+          class="Controllers.PetController" />
     
     
     

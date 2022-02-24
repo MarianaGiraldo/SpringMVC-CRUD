@@ -31,28 +31,13 @@
         <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href='<c:url value="vendor/animsition/css/animsition.min.css" />'>
         <!--===============================================================================================-->
-        <link rel="stylesheet" type="text/css" href='<c:url value="vendor/select2/select2.min.css"/>'>
+
         <!--===============================================================================================-->
         <link rel="stylesheet" type="text/css" href='<c:url value="vendor/daterangepicker/daterangepicker.css"/>'>
-        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-        <script src='<c:url value="Views/js/nav.js"/>'></script>     
-        <!--===============================================================================================-->
-        <script src='<c:url value="vendor/jquery/jquery-3.2.1.min.js"/>'></script>
-        <!--===============================================================================================-->
-        <script src='<c:url value="vendor/animsition/js/animsition.min.js"/>'></script>
-        <!--===============================================================================================-->
-        <script src='<c:url value="vendor/bootstrap/js/popper.js"/>'></script>
-        <script src='<c:url value="vendor/bootstrap/js/bootstrap.min.js"/>'></script>
-        <!--===============================================================================================-->
-        <script src='<c:url value="vendor/select2/select2.min.js"/>'></script>
-        <script>
-            $(".selection-2").select2({
-                minimumResultsForSearch: 20,
-                dropdownParent: $('#dropDownSelect1')
-            });
-        </script>
+
+
+
         <!--===============================================================================================-->
         <script src='<c:url value="vendor/daterangepicker/moment.min.js"/>'></script>
         <script src='<c:url value="vendor/daterangepicker/daterangepicker.js"/>'></script>
@@ -61,24 +46,14 @@
         <!--===============================================================================================-->
         <script src='<c:url value="js/main.js"/>'></script>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-
-            gtag('config', 'UA-23581568-13');
-        </script>
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Adopt Pets</title>
     </head>
     <body class="bg-primary bg-opacity-10">
 
-    <nav class="navbar navbar-expand-lg nav">
+    <nav class="navbar navbar-expand-lg nav bg-dark">
+        <script src='<c:url value="Views/js/nav.js"/>'></script>   
         <div class="container-fluid container">
             <div class="logo">
                 <a class="navbar-brand" href="index.htm">Your Logo</a>
@@ -87,7 +62,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="mainListDiv" class="main_list collapse navbar-collapse">
-                <ul class="navlinks navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navlinks navbar-nav me-auto mb-2 mb-lg-0 ">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.htm">Home</a>
                     </li>
@@ -110,6 +85,7 @@
                 </ul>
             </div>
         </div>
+
     </nav>
     <!-- Jquery needed -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -117,15 +93,15 @@
 
     <!-- Function used to shrink nav bar removing paddings and adding black background -->
     <script>
-                $(window).scroll(function() {
-                    if ($(document).scrollTop() > 50) {
-                        $('.nav').addClass('bg-dark');
-                        $('.nav').addClass('p-0');
-                        console.log("OK");
-                    } else {
-                        $('.nav').removeClass('bg-dark');
-                        $('.nav').removeClass('p-0');
-                    }
-                    s
-                });
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('bg-dark');
+                $('.nav').addClass('p-0');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('bg-dark');
+                $('.nav').removeClass('p-0');
+            }
+            s
+        });
     </script>

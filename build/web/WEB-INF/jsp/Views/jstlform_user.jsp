@@ -16,12 +16,12 @@
             <p class="text-muted mt-0">
                 <%
                     try {
-                        %>
-                        <sql:setDataSource driver="com.mysql.jdbc.Driver"
-                                           url="jdbc:mysql://localhost:3306/adopt_pets_db"
-                                           user="root"
-                                           password=""/>
-                        Conexión a base de datos exitosa
+                %>
+                <sql:setDataSource driver="com.mysql.jdbc.Driver"
+                                   url="jdbc:mysql://localhost:3306/adopt_pets_db"
+                                   user="root"
+                                   password=""/>
+                Conexión a base de datos exitosa
                 <%
                     } catch (Exception ex) {
                         out.print("Conexion a Base de datos fallida: " + ex.getMessage());
@@ -62,6 +62,12 @@
                             <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                         </span>
                     </form:button>
+                </div>
+            </div>
+            <div class="container-contact100-form-btn">
+                <div class="wrap-contact100-form-btn">
+                    <div class="contact100-form-bgbtn"></div>
+                    <a class="contact100-form-btn btn" href="listusers.htm">List Users</a>
                 </div>
             </div>
         </form:form>

@@ -14,6 +14,7 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class PetBean {
+    private int id;
     private String pet_type;
     private String name;
     private int born_year;
@@ -116,6 +117,20 @@ public class PetBean {
      */
     public void setIs_adopted(Boolean is_adopted) {
         this.is_adopted = is_adopted;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
     
     
