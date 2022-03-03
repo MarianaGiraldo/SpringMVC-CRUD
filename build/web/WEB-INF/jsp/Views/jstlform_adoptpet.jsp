@@ -21,10 +21,22 @@
                 <span class="focus-input100"></span>
             </div>
             <div class="wrap-input100 input100-select">
-                <form:label path="pet_id" cssClass="label-input100">Pet id</form:label>
-                <form:input path="user_id" cssClass="input100 " type="text" value="${pet_id}" disabled="true"/>
-                    <div>
+                <form:label path="user_id" cssClass="label-input100">Pet type</form:label>
+                    <div class="select2">
+                    <form:select path="user_id" cssClass="form-select selection-2-pettype fs-18" >
+                        <c:forEach items="${userList}" var="user">
+                            <form:option value="${user.id}">${user.name}</form:option>
+                        </c:forEach>
+                    </form:select>
                 </div>
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 input100-select">
+                <form:label path="pet_id" cssClass="label-input100">Pet id</form:label>
+                <form:input path="pet_id" cssClass="input100 " type="text" value="${pet_id}" disabled="true"/>
+
+            </div>
+            <div>
                 <span class="focus-input100"></span>
             </div>
             <div class="container-contact100-form-btn">

@@ -17,7 +17,7 @@ public class DBConnection {
         //TODO Hacer el try catch
         DriverManagerDataSource dtsource = new DriverManagerDataSource();
         dtsource.setDriverClassName("com.mysql.jdbc.Driver");
-        dtsource.setUrl("jdbc:mysql://localhost:3306/adopt_pets_db");
+        dtsource.setUrl("jdbc:mysql://localhost:3306/adopt_pets_db2");
         dtsource.setUsername("root");
         dtsource.setPassword("");
         

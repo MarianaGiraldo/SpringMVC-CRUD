@@ -14,10 +14,12 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class UserBean {
+    private int id;
     private String name;
     private String phoneNumber;
     private String email;
-    private String id;
+    private String document;
+    
 
     public UserBean() {
     }
@@ -26,7 +28,7 @@ public class UserBean {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.id = id;
+        this.document = id;
     }
 
     
@@ -73,35 +75,31 @@ public class UserBean {
     }
     
     /**
+     * @return the document
+     */
+    public String getDocument() {
+        return document;
+    }
+
+    /**
+     * @param document the document to set
+     */
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    /**
      * @return the id
      */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
-    }
-    
-    
-    //CRUD
-    public String consultUser(){
-        return "The user has been found.";
-    }
-    
-    public String editUser(){
-        return "The user has been edited.";
-    }
-    
-    public String deleteUser(){
-        return "The user has been deleted.";
-    }
-    
-    public String insertParking(){
-       return "El The user has been inserted."; 
     }
 
     

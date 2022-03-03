@@ -13,21 +13,7 @@
             <span class="contact100-form-title m-b-0">
                 Welcome!
             </span>
-            <p class="text-muted mt-0">
-                <%
-                    try {
-                %>
-                <sql:setDataSource driver="com.mysql.jdbc.Driver"
-                                   url="jdbc:mysql://localhost:3306/adopt_pets_db"
-                                   user="root"
-                                   password=""/>
-                Conexión a base de datos exitosa
-                <%
-                    } catch (Exception ex) {
-                        out.print("Conexion a Base de datos fallida: " + ex.getMessage());
-                    }
-                %>
-            </p>
+            
             <form:errors path="*" element="div" cssClass="alert alert-danger mt-0" />
             <br/>
             <div class="wrap-input100 validate-input" data-validate="Name is required">
@@ -47,9 +33,9 @@
                 <form:input path="phoneNumber" cssClass="input100" type="tel" placeholder="Enter your phone number" value="" pattern="[0-9]{10}" title="Phone Number invalid: Only numbers allowed"/>
                 <span class="focus-input100"></span>
             </div>
-            <div class="wrap-input100 validate-input" data-validate = "Phone number is required">
-                <form:label path="id" cssClass="label-input100">Identification Number</form:label>
-                <form:input path="id" cssClass="input100" type="text" placeholder="Enter your ID"  value="" pattern="[0-9]{10}" />
+            <div class="wrap-input100 validate-input" data-validate = "Document number is required">
+                <form:label path="document" cssClass="label-input100">Identification Number</form:label>
+                <form:input path="document" cssClass="input100" type="text" placeholder="Enter your ID"  value="" pattern="[0-9]{10}" />
                 <span class="focus-input100"></span>
             </div>
 
@@ -65,9 +51,11 @@
                 </div>
             </div>
             <div class="container-contact100-form-btn">
-                <div class="wrap-contact100-form-btn">
+                <div class="wrap-contact100-form-btn pt-2 pb-0">
                     <div class="contact100-form-bgbtn"></div>
-                    <a class="contact100-form-btn btn" href="listusers.htm">List Users</a>
+                    <a class="contact100-form-btn btn mt-1 mb-0" href="listusers.htm">
+                        <span class="fs-18">List Users</span>
+                    </a>
                 </div>
             </div>
         </form:form>
