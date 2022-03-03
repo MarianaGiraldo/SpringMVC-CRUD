@@ -15,13 +15,8 @@
             </span>
             <form:errors path="*" element="div" cssClass="alert alert-danger mt-0" />
             <br/>
-            <div class="wrap-input100 validate-input" data-validate = "Phone number is required">
-                <form:label path="user_id" cssClass="label-input100">Enter your Identification Number</form:label>
-                <form:input path="user_id" cssClass="input100" type="text" placeholder="Enter your ID"  value="" pattern="[0-9]{10}" />
-                <span class="focus-input100"></span>
-            </div>
             <div class="wrap-input100 input100-select">
-                <form:label path="user_id" cssClass="label-input100">Pet type</form:label>
+                <form:label path="user_id" cssClass="label-input100">Select user</form:label>
                     <div class="select2">
                     <form:select path="user_id" cssClass="form-select selection-2-pettype fs-18" >
                         <c:forEach items="${userList}" var="user">
@@ -35,6 +30,10 @@
                 <form:label path="pet_id" cssClass="label-input100">Pet id</form:label>
                 <form:input path="pet_id" cssClass="input100 " type="text" value="${pet_id}" disabled="true"/>
 
+            </div>
+            <div class="wrap-input100">
+                <form:label path="date" cssClass="label-input100">Date</form:label>
+                <form:input path="date" cssClass="input100 " type="date" />
             </div>
             <div>
                 <span class="focus-input100"></span>

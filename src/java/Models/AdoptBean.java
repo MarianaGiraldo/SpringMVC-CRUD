@@ -16,14 +16,18 @@ import javax.ejb.Stateless;
 public class AdoptBean {
     private String user_id;
     private String pet_id;
+    private String date;
 
     public AdoptBean() {
     }
 
-    public AdoptBean(String user_id, String pet_id) {
+    public AdoptBean(String user_id, String pet_id, String date) {
         this.user_id = user_id;
         this.pet_id = pet_id;
+        this.date = date;
     }
+
+    
 
     /**
      * @return the user_id
@@ -51,5 +55,19 @@ public class AdoptBean {
      */
     public void setPet_id(String pet_id) {
         this.pet_id = pet_id;
+    }
+
+    /**
+     * @return the date
+     */
+    public String getDate() {
+        return date;
+    }
+
+    /**
+     * @param date the date to set
+     */
+    public void setDate(String date) {
+        this.date = date;
     }
 }

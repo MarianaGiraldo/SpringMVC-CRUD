@@ -37,6 +37,11 @@ public class AdoptController {
        this.adoptDao = new AdoptDao();
     }
     
+    /***
+     * GET adoptions form
+     * @param request
+     * @return ModelAndView mav
+     */
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView getAdoptForm(HttpServletRequest request){
         AdoptBean ab = new AdoptBean();
@@ -53,17 +58,23 @@ public class AdoptController {
         return mav;
     }
     
-    
+    /***
+     * Method POST of adoptions form
+     * @param ab
+     * @return 
+     */
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView postAdoptForm(AdoptBean ab, ModelMap map){
-        map.addAttribute("adopt", ab);
+    public ModelAndView postAdoptForm( AdoptBean ab){
         ModelAndView mav = new ModelAndView();
-        String sql = "INSERT INTO `adoptings`(`user_id`, `pet_id`) VALUES (?, ?)";
+        String sql = "INSERT INTO adoptings(user_id, pet_id) VALUES (?, ?)";
         this.jdbcTemplate.update(sql, ab.getUser_id(), ab.getPet_id());
-//        
-//        String sql2 = "UPDATE `pets` SET `is_adopted` = '1' WHERE `pets`.`id` = (?);";
-//        this.jdbcTemplate.update(sql2, ab.getPet_id());
+        System.out.print(sql);
+        System.out.println("Insert into adoptions table successfully");
+        
+        String sql2 = "UPDATE `pets` SET `is_adopted` = '1' WHERE `pets`.`id` = (?);";
+        this.jdbcTemplate.update(sql2, ab.getPet_id());
         mav.setViewName("Views/jstlview_adoptpet");
+        System.out.println("Pet status updated");
         
         return mav;
     }
